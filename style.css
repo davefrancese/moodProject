@@ -1,19 +1,52 @@
-/* MOOD STYLESHEET - LINK WORKING IN INDEX */
+/* MOOD STYLESHEET */
 body {
+  background: #262426;
   margin: 0px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #852628;
+  font-size: 1rem;
+  letter-spacing: 3px;
 }
 
 header {
-  background: blue;
+  background: #852628;
   padding: 10px;
 }
 
+nav {
+  border-bottom: 1px solid #852628;
+  color: #E9DCC0;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+a {
+  color: #E9DCC0;
+}
+
+a:hover {
+  color: #968E7C;
+}
+
+ul li {
+  margin-right: 50px;
+}
+
+img {
+  max-width: 150px;
+  padding: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
 main {
-  background: silver;
+
   padding: 10px;
 }
 
 aside {
-  background: grey;
+
   padding: 10px;
 }
