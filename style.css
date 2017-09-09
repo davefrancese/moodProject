@@ -1,0 +1,19 @@
+/* MOOD STYLESHEET - LINK WORKING IN INDEX */
+body {
+  margin: 0px;
+}
+
+header {
+  background: blue;
+  padding: 10px;
+}
+
+main {
+  background: silver;
+  padding: 10px;
+}
+
+aside {
+  background: grey;
+  padding: 10px;
+}
