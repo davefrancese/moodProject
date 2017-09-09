@@ -2,4 +2,4 @@
 
 # MOOD.
 
-### MOOD. is an app designed for those that need new music to listen to.
+MOOD. is an app that generates a playlist of 10 songs based on the weather where the user is and on the users mood and emotional state at that time.
