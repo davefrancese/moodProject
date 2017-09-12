@@ -2,15 +2,25 @@
 body {
   background: #262426;
   margin: 0px;
-  font-family: 'Josefin Sans', sans-serif;
-  color: #852628;
+  font-family: 'Work Sans', sans-serif;
+  color: #E9DCC0;
   font-size: 1rem;
   letter-spacing: 3px;
+  text-align: center;
 }
+
+/* ----- HEADER ------ */
 
 header {
   background: #852628;
   padding: 10px;
+}
+
+img {
+  width: 150px;
+  padding: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 nav {
@@ -18,8 +28,8 @@ nav {
   color: #E9DCC0;
 }
 
-.active {
-  text-decoration: underline;
+.inactive {
+  color: #968E7C;
 }
 
 a {
@@ -27,26 +37,79 @@ a {
 }
 
 a:hover {
-  color: #968E7C;
+  color: #E9DCC0;
 }
 
 ul li {
   margin-right: 50px;
 }
 
-img {
-  max-width: 150px;
-  padding: 20px;
-  margin-right: 50px;
-  margin-left: 50px;
+/* ----- MAIN CONTENT ------ */
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+
 }
 
-main {
 
-  padding: 10px;
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  body {
+
+  }
+
+  .sign-up, .feature-1, .feature-2 , .feature-3 {
+
+  }
 }
 
-aside {
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  #full-container {
+    display: flex;
+  }
 
-  padding: 10px;
+  main {
+    display: flex;
+    margin-top: 83px;
+  }
+
+  section .write-up {
+  }
+
+  aside {
+    background: #343a40;
+    padding: 20px;
+    margin-top: 83px;
+    width: 300px;
+  }
+
+  p .spc {
+    margin-top: 10px;
+  }
+
+  aside img {
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    border-radius: 5px;
+    width: 150px;
+  }
+
+  form {
+
+  }
+
+  button {
+    background: #545254;
+    color: #E9DCC0;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background: #474647;
+  }
+
+  .playlist {
+    background: gray;
+  }
 }

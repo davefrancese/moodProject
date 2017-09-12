@@ -4,31 +4,82 @@
     <meta charset="utf-8">
     <title>MOOD. | Today's Music For You</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:300" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- BEGIN HEADER CONTENT -->
     <header>
       <nav class="navbar navbar-expand-md bg-dark fixed-top">
       <a class="navbar-brand" href="index.html"><img src="images/moodLogoColor.png" alt="mood-logo"></a>
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link inactive" href="about.html">About</a>
           </li>
         </ul>
     </nav>
     </header>
-    <main>
-      <aside class="">
+    <!-- BEGIN ASIDE CONTENT -->
+    <div id="full-container">
 
-      </aside>
+      <!-- BEGIN MAIN CONTENT -->
+      <main>
+        <section class="write-up">
+          <p>this is what it does</p>
+        </section>
 
-    </main>
-    <footer>
-    </footer>
+        <form id="weather-form" action="index.html" method="post">
+          <!-- EMOJI BUTTONS -->
+          <label for="mood-form">How are you feeling?</label>
+          <input type="radio" id="moodChoice1"
+          name="mood" value="happy">
+          <label for="moodChoice1">Happy</label>
+
+          <input type="radio" id="moodChoice2"
+          name="mood" value="sad">
+          <label for="moodChoice2">Sad</label>
+
+          <input type="radio" id="moodChoice3"
+          name="mood" value="angry">
+          <label for="moodChoice3">Angry</label>
+
+          <input type="radio" id="moodChoice4"
+          name="mood" value="sexy">
+          <label for="moodChoice4">Sexy</label>
+
+          <input type="radio" id="moodChoice5"
+          name="mood" value="goofy">
+          <label for="moodChoice5">Goofy</label>
+
+          <input id="cityInput" type="text" name="city" value="" placeholder="city">
+
+          <input id="stateInput" type="text" name="state" value="" placeholder="state initials">
+          <button type="submit" name="button">Submit</button>
+        </form>
+        <!-- BEGIN WEATHER RESULTS AND MOOD RESULTS -->
+        <aside>
+          <section class="weather-radar">
+
+          </section>
+          <section class="mood-image">
+
+          </section>
+
+        </aside>
+        <!-- BEGIN PLAYLIST CONTENT -->
+        <section class="playlist">
+          <p>this will be where the playlist goes</p>
+        </section>
+
+
+      </main>
+      <!-- BEGIN FOOTER CONTENT -->
+      <footer>
+      </footer>
+    </div>
   <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
