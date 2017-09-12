@@ -17,6 +17,7 @@ weatherForm.addEventListener('submit', function(event) {
     .then((response) => {
       return response.json()
         .then ((weatherSearchData) => {
+          var weatherStatus = weatherSearchData.current_observation.weather;
           var weatherRadar = document.getElementsByClassName('weather-radar')[0];
           var cloudCoverage = weatherSearchData.current_observation.weather;
           var temperature = Math.round(weatherSearchData.current_observation.temp_f) + '˚F';
@@ -41,32 +42,51 @@ weatherForm.addEventListener('submit', function(event) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/happy.png')
             moodImage.append(emoImg);
+            var emoChoice = 'happy';
           } else if (sad.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/sad.png')
             moodImage.append(emoImg);
+            var emoChoice = 'sad';
           } else if (angry.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/angry.png')
             moodImage.append(emoImg);
+            var emoChoice = 'angry';
           } else if (sexy.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/sexy.png')
             moodImage.append(emoImg);
+            var emoChoice = 'sexy';
           } else if (goofy.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/goofy.png')
             moodImage.append(emoImg);
+            var emoChoice = 'goofy';
           } else {
             var nothing = document.createElement('h5');
             nothing.innerHTML = 'Pick an Emotion';
             moodImage.append(nothing);
+            var emoChoice = 'nothing';
           }
 
           // FETCH ITUNES MUSIC API
+          if (emoChoice === 'happy' && weatherStatus === 'Clear') {
+            var emoAPI = 'https://itunes.apple.com/search?term=lcdsoundsystem'
+          } else {
+            var emoAPI = 'https://itunes.apple.com/search?term=radiohead'
+          }
 
-          var iTunesEndpoint = 'https://itunes.apple.com/search?term=radiohead';
-          fetch(iTunesEndpoint)
+          // CREATE EMPTY ARRAY FOR FETCHING PROMISES (PUSH)
+          // ARRAY OF BAND NAMES
+          // LOOP THROU ARRAY
+            //  GEN. URL (ENDPOINT)
+            //  FETCH URL
+            //  PUSH RESULT=(promise) OF FETCH TO EMPTY ARRAY
+          // PROMISE.ALL ON EMPTY ARRAY
+
+          var iTunesEndpoint = 'https://itunes.apple.com/search?term=lcdsoundsystem';
+          fetch(emoAPI)
             .then((response) => {
               return response.json()
                 .then((iTunesData) => {

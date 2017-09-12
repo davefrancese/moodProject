@@ -44,15 +44,51 @@ ul li {
   margin-right: 50px;
 }
 
+.write-up {
+  margin: 0px 0px 0px 0px;
+  padding: 50px;
+}
+
+img {
+  width: 100px;
+}
+
+img#logo {
+  width: 200px;
+}
+
+video {
+  margin-top: -100px;
+}
+
 /* ----- MAIN CONTENT ------ */
 /* Mobile Styles */
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 415px) {
+  #logo {
+    width: 200px;
+  }
+
+  .write-up {
+    margin: 50px 10px 50px 10px;
+  }
+
+  #label {
+    display: block;
+  }
+
+  button {
+    margin: 10px;
+  }
+
+  section .weather-radar {
+    background: red;
+  }
 
 }
 
 
 /* Tablet Styles */
-@media only screen and (min-width: 401px) and (max-width: 960px) {
+@media only screen and (min-width: 416px) and (max-width: 960px) {
   body {
 
   }
@@ -65,33 +101,26 @@ ul li {
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
   #full-container {
-    display: flex;
+
   }
 
   main {
-    display: flex;
-    margin-top: 83px;
+
   }
 
   section .write-up {
   }
 
   aside {
-    background: #343a40;
-    padding: 20px;
-    margin-top: 83px;
-    width: 300px;
+
   }
 
   p .spc {
-    margin-top: 10px;
+
   }
 
   aside img {
-    margin: 0px 0px 10px 0px;
-    padding: 0px;
-    border-radius: 5px;
-    width: 150px;
+
   }
 
   form {
@@ -99,17 +128,14 @@ ul li {
   }
 
   button {
-    background: #545254;
-    color: #E9DCC0;
-    border: none;
-    border-radius: 5px;
+
   }
 
   button:hover {
-    background: #474647;
+
   }
 
   .playlist {
-    background: gray;
+
   }
 }
