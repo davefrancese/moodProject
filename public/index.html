@@ -10,7 +10,7 @@
   <body>
     <!-- BEGIN HEADER CONTENT  in nav class bg-dark -->
     <header>
-      <a class="navbar-brand" href="index.html"><img id="logo" src="images/moodLogoColor.png" alt="mood-logo"></a>
+      <a class="navbar-brand" href="index.html"><img src="images/moodLogoColor.png" id="logo" alt="mood-logo"></a>
     </header>
     <!-- BEGIN ASIDE CONTENT -->
     <div id="full-container">
@@ -46,28 +46,31 @@
             <label for="moodChoice5">Goofy</label>
           </div>
           <br>
+          <p>Enter your city and state initials.</p>
           <input id="cityInput" type="text" name="city" value="" placeholder="city">
 
           <input id="stateInput" type="text" name="state" value="" placeholder="state initials">
           <button type="submit" name="button">Submit</button>
         </form>
         <!-- BEGIN WEATHER RESULTS AND MOOD RESULTS -->
-        <aside>
-          <section class="weather-radar">
-
+        <div id="result-container">
+          <aside>
+            <section class="mood-image">
+              <!-- javascript input -->
+            </section>
+            <section class="weather-radar">
+              <!-- javascript input -->
+            </section>
+          </aside>
+          <!-- BEGIN PLAYLIST CONTENT -->
+          <section class="playlist">
+            <table class='playlist-table'>
+              <!-- javascript input -->
+            </table>
           </section>
-          <section class="mood-image">
-
-          </section>
-
-        </aside>
-        <!-- BEGIN PLAYLIST CONTENT -->
-        <section class="playlist">
-          <p>this will be where the playlist goes</p>
-        </section>
-
-
+        </div>
       </main>
+
       <!-- BEGIN FOOTER CONTENT -->
       <footer>
       </footer>

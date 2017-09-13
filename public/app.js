@@ -70,13 +70,6 @@ weatherForm.addEventListener('submit', function(event) {
             var emoChoice = 'nothing';
           }
 
-          // FETCH ITUNES MUSIC API
-          if (emoChoice === 'happy' && weatherStatus === 'Clear') {
-            var emoAPI = 'https://itunes.apple.com/search?term=lcdsoundsystem'
-          } else {
-            var emoAPI = 'https://itunes.apple.com/search?term=radiohead'
-          }
-
           // CREATE EMPTY ARRAY FOR FETCHING PROMISES (PUSH)
           // ARRAY OF BAND NAMES
           // LOOP THROU ARRAY
@@ -85,37 +78,73 @@ weatherForm.addEventListener('submit', function(event) {
             //  PUSH RESULT=(promise) OF FETCH TO EMPTY ARRAY
           // PROMISE.ALL ON EMPTY ARRAY
 
-          var iTunesEndpoint = 'https://itunes.apple.com/search?term=lcdsoundsystem';
-          fetch(emoAPI)
-            .then((response) => {
-              return response.json()
-                .then((iTunesData) => {
-                  console.log(iTunesData);
+          var happyPromises = [];
+
+          var happyBands = [
+            'https://itunes.apple.com/search?term=lcdsoundsystem','https://itunes.apple.com/search?term=arcadefire', 'https://itunes.apple.com/search?term=foals','https://itunes.apple.com/search?term=menomena', 'https://itunes.apple.com/search?term=altj',
+            'https://itunes.apple.com/search?term=animalcollective',
+            'https://itunes.apple.com/search?term=gorillaz',
+            'https://itunes.apple.com/search?term=futureislands',
+            'https://itunes.apple.com/search?term=tvontheradio',
+            'https://itunes.apple.com/search?term=rac'
+          ]
+
+          for (i = 0; i < happyBands.length; i++) {
+            fetch(happyBands[i])
+              .then((response) => {
+                return response.json()
+                }).then((data) => {
+                  happyPromises.push(data);
                   var playlist = document.getElementsByClassName('playlist')[0];
-                  // adding song image
-                  var songImgURL = iTunesData.results["0"].artworkUrl60;
-                  var songImg = document.createElement('img');
-                  songImg.setAttribute('src', songImgURL);
-                  playlist.append(songImg);
-                  // adding song title
-                  var songName = iTunesData.results["0"].trackName;
-                  var songTitle = document.createElement('h5');
-                  // adding artist name
-                  var artistName = iTunesData.results["0"].artistName;
-                  songTitle.innerHTML = artistName + " - " + songName;
-                  playlist.append(songTitle);
-                  // adding audio player sampler
-                  var songPreURL = iTunesData.results["0"].previewUrl;
-                  var songPlayer = document.createElement('video');
-                  songPlayer.setAttribute('controls', 'controls')
-                  songPlayer.setAttribute('name', 'media');
-                  var source = document.createElement('source');
-                  source.setAttribute('src', songPreURL);
-                  source.setAttribute('type', 'audio/x-m4a');
-                  songPlayer.append(source);
-                  playlist.append(songPlayer)
-                })
+                  for (var i = 0; i < happyPromises.length; i++) {
+                    // SONG IMAGE
+                    var songImgURL = happyPromises[i].results["0"].artworkUrl30;
+                    var songImg = document.createElement('img');
+                    songImg.setAttribute('src', songImgURL);
+                    // ARTIST NAME and SONG NAME
+                    var artistSongTitle = document.createElement('p')
+                    var artistName = happyPromises[i].results["0"].artistName;
+                    var songName = happyPromises[i].results["0"].trackName;
+                    artistSongTitle.innerHTML = artistName + ' - ' + songName;
+                    // SONG PLAYER
+                    var songPreURL = happyPromises[i].results["0"].previewUrl;
+                    var songPlayer = document.createElement('video');
+                    songPlayer.setAttribute('controls', 'controls');
+                    songPlayer.setAttribute('name', 'media');
+                    // SET SOURCE INSIDE VIDEO TAG
+                    var source = document.createElement('source');
+                    source.setAttribute('src', songPreURL);
+                    source.setAttribute('type', 'audio/x-m4a');
+                    songPlayer.append(source);
+                  }
+                  playlist.append(songImg, artistSongTitle, songPlayer);
             })
+          }
+
+
+
+
+          //Promise.all(happyPromises).then((values) => {
+
+            // var table = document.getElementsByClassName('playlist-table')[0];
+            // for (var i = 0; i < happyPromises.length; i++) {
+            //   //adding song IMAGE
+            //   console.log(happyPromises[i]);
+            //   // var songImgURL = values["0"].results[i].artworkUrl30;
+            //
+            // }
+
+
+
+
+          //})
+
+
+
+
+
+
+
         })
     })
 })
