@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+
     <title>MOOD. | Today's Music For You</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300" rel="stylesheet">
@@ -14,13 +15,11 @@
     </header>
     <!-- BEGIN ASIDE CONTENT -->
     <div id="full-container">
-
       <!-- BEGIN MAIN CONTENT -->
       <main>
         <section class="write-up">
           <p>MOOD. is an app that generates a playlist of music based upon your mood and the weather conditions in your location.</p>
         </section>
-
         <form id="weather-form" action="index.html" method="post">
           <!-- EMOJI BUTTONS -->
           <p for="mood-form" id="label">How are you feeling?</p>
@@ -46,16 +45,16 @@
             <label for="moodChoice5">Goofy</label>
           </div>
           <br>
-          <p>Enter your city and state initials.</p>
-          <input id="cityInput" type="text" name="city" value="" placeholder="city">
-
-          <input id="stateInput" type="text" name="state" value="" placeholder="state initials">
-          <button type="submit" name="button" class="btn btn-primary">Submit</button>
+            <p>Enter your city and state initials.</p>
+          <div class="text-fields">
+            <input id="cityInput" type="text" name="city" value="" placeholder="city">
+            <input id="stateInput" type="text" name="state" value="" placeholder="state initials">
+          </div>
+            <button type="submit" name="button" class="btn btn-primary">Submit</button>
         </form>
         <!-- BEGIN WEATHER RESULTS AND MOOD RESULTS -->
         <div id="result-container">
           <aside>
-
             <section class="mood-image">
               <!-- javascript input -->
             </section>
@@ -64,18 +63,15 @@
             </section>
           </aside>
           <!-- BEGIN PLAYLIST CONTENT -->
-
           <section class="playlist">
-
           </section>
         </div>
       </main>
     </div>
       <!-- BEGIN FOOTER CONTENT -->
       <footer class="footer">
-
-    </footer>
-
+        <p>Designed by Dave Francese</p>
+      </footer>
   <script type="text/javascript" src="app.js"></script>
   </body>
 </html>

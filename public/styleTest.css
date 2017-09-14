@@ -1,0 +1,90 @@
+/*TEST STYLE FOR MOOD. APP*/
+body {
+  background: #262426;
+  margin: 0px;
+  font-family: 'Work Sans', sans-serif;
+  color: #E9DCC0;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+/*----- HEADER -----*/
+header {
+  background: #852628;
+  padding: 10px;
+  border-bottom-color: #968E7C;
+  border-bottom-style: double;
+}
+
+img {
+  padding: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+  width: 200px;
+}
+
+/*----- WRITE UP -----*/
+.write-up {
+  margin: 0px 0px 0px 0px;
+  padding: 50px;
+}
+
+/*----- RADIO BUTTONS -----*/
+.mood-radios {
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+input[type='radio'] {
+  transform: scale();
+
+}
+
+/*------ TEXT FIELDS -----*/
+.text-fields {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 200px 30px 200px;
+}
+
+button {
+  transform: scale(3);
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+/*----- RESULT CONTAINER -----*/
+#result-container {
+  margin-top: 50px;
+  background: #474647;
+}
+
+.image-adj {
+  width: 200px;
+}
+
+.font-adj {
+  font-size: 4rem;
+}
+
+/*----- PLAYLIST RESULTS -----*/
+.playlist {
+  margin-top: 100px;
+}
+
+.song-img-head-room {
+  margin-top: 50px;
+}
+
+video {
+  margin-top: -100px;
+  width: 300px;
+}
+
+/* ----- DESKTOP STYLING ------ */
+@media only screen and (min-width: 960px) {
+
+}

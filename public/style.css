@@ -6,12 +6,12 @@ body {
   margin: 0px;
   font-family: 'Work Sans', sans-serif;
   color: #E9DCC0;
-  font-size: 2rem;
+  font-size: 1rem;
   letter-spacing: 3px;
   text-align: center;
 }
 
-/* HEADER  */
+/* -----HEADER-----  */
 header {
   background: #852628;
   padding: 10px;
@@ -26,121 +26,57 @@ img {
   margin-left: 50px;
 }
 
-nav {
-  border-bottom: 1px solid #E9DCC0;
-  color: #E9DCC0;
-}
-
-.inactive {
-  color: #968E7C;
-}
-
-a {
-  color: #E9DCC0;
-}
-
-a:hover {
-  color: #E9DCC0;
-}
-
-ul li {
-  margin-right: 50px;
-}
-
 .write-up {
   margin: 0px 0px 0px 0px;
   padding: 50px;
 }
 
-img {
+button {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.image-adj {
   width: 100px;
+}
+
+.font-adj {
+  font-size: 2rem;
+}
+
+/*----- PLAYLIST RESULTS -----*/
+#result-container {
+  border-top-color: #968E7C;
+  border-top-style: double;
+  margin-top: 50px;
+  background: #474647;
+}
+
+
+
+.playlist {
+  margin-top: 100px;
 }
 
 img#logo {
   width: 200px;
 }
 
-aside {
+img {
+  width:100px;
+}
 
+.song-img-head-room {
+  margin-top: 50px;
 }
 
 video {
   margin-top: -100px;
 }
 
-#result-container {
-  display: flex;
-  margin-top: 50px;
-  background: #474647;
-}
-
-/* ----- DESKTOP STYLING ------ */
-@media only screen and (min-width: 960px) {
-
-  body {
-    font-size: 1rem;
-  }
-
-  /* HEADER  */
-  header {
-    background: #852628;
-    padding: 10px;
-    border-bottom-color: #968E7C;
-    border-bottom-style: double;
-  }
-
-  img {
-    width: 150px;
-    padding: 20px;
-    margin-right: 50px;
-    margin-left: 50px;
-  }
-
-  nav {
-    border-bottom: 1px solid #E9DCC0;
-    color: #E9DCC0;
-  }
-
-  .inactive {
-    color: #968E7C;
-  }
-
-  a {
-    color: #E9DCC0;
-  }
-
-  a:hover {
-    color: #E9DCC0;
-  }
-
-  ul li {
-    margin-right: 50px;
-  }
-
-  .write-up {
-    margin: 0px 0px 0px 0px;
-    padding: 50px;
-  }
-
-  img {
-    width: 100px;
-  }
-
-  img#logo {
-    width: 200px;
-  }
-
-  aside {
-
-  }
-
-  video {
-    margin-top: -100px;
-  }
-
-  #result-container {
-    display: flex;
-    margin-top: 50px;
-    background: #474647;
-  }
+/*----- FOOTER -----*/
+footer {
+  padding-top: 30px;
+  border-top-color: #968E7C;
+  border-top-style: double;
 }

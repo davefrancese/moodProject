@@ -1,5 +1,5 @@
 // JAVASCRIPT FOR MOOD. APP
-// Last saved (Sept. 14 9:26pm)
+// Last saved repl.it (Sept. 14 3:35pm)
 
 var weatherForm = document.getElementById('weather-form');
 var promises = [];
@@ -75,6 +75,7 @@ weatherForm.addEventListener('submit', function(event) {
           var weatherStatus = weatherSearchData.current_observation.weather;
           var weatherRadar = document.getElementsByClassName('weather-radar')[0];
           var cloudCoverage = weatherSearchData.current_observation.weather;
+          console.log(cloudCoverage);
           var temperature = Math.round(weatherSearchData.current_observation.temp_f) + '˚F';
           var weatherImage = weatherSearchData.current_observation.icon_url;
           // ADD WEATHER TO HTML PAGE
@@ -82,10 +83,12 @@ weatherForm.addEventListener('submit', function(event) {
           var eImg = document.createElement('img');
           eImg.setAttribute('src', weatherImage);
           weatherRadar.append(eImg)
+          eImg.className += "image-adj"
           // adding temperature
           var eH5 = document.createElement('h5');
           eH5.innerHTML = temperature;
           weatherRadar.append(eH5);
+          eH5.className += "font-adj"
           //ADD MOOD EMOJI TO HTML PAGE
           var moodImage = document.getElementsByClassName('mood-image')[0];
           var happy = document.getElementById('moodChoice1')
@@ -97,30 +100,35 @@ weatherForm.addEventListener('submit', function(event) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/happy.png')
             moodImage.append(emoImg);
+            emoImg.className += "image-adj";
             var emoChoice = 'happy';
             getBands(happyBands);
           } else if (sad.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/sad.png')
             moodImage.append(emoImg);
+            emoImg.className += "image-adj";
             var emoChoice = 'sad';
             getBands(sadBands);
           } else if (angry.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/angry.png')
             moodImage.append(emoImg);
+            emoImg.className += "image-adj";
             var emoChoice = 'angry';
             getBands(angryBands);
           } else if (sexy.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/sexy.png')
             moodImage.append(emoImg);
+            emoImg.className += "image-adj";
             var emoChoice = 'sexy';
             getBands(sexyBands);
           } else if (goofy.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/goofy.png')
             moodImage.append(emoImg);
+            emoImg.className += "image-adj";
             var emoChoice = 'goofy';
             getBands(goofyBands)
           } else {
@@ -142,9 +150,10 @@ weatherForm.addEventListener('submit', function(event) {
                     var playlist = document.getElementsByClassName('playlist')[0];
                     for (var i = 0; i < promises.length; i++) {
                       // SONG IMAGE
-                      var songImgURL = promises[i].results["0"].artworkUrl30;
+                      var songImgURL = promises[i].results["0"].artworkUrl100;
                       var songImg = document.createElement('img');
                       songImg.setAttribute('src', songImgURL);
+                      songImg.className += "song-img-head-room";
                       // ARTIST NAME and SONG NAME
                       var artistSongTitle = document.createElement('p')
                       var artistName = promises[i].results["0"].artistName;
