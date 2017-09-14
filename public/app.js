@@ -1,6 +1,61 @@
 // JAVASCRIPT FOR MOOD. APP
+// Last saved (Sept. 14 9:26pm)
 
 var weatherForm = document.getElementById('weather-form');
+var promises = [];
+var happyBands = [
+  'https://itunes.apple.com/search?term=lcdsoundsystem',
+  'https://itunes.apple.com/search?term=arcadefire', 'https://itunes.apple.com/search?term=foals',
+  'https://itunes.apple.com/search?term=menomena', 'https://itunes.apple.com/search?term=altj',
+  'https://itunes.apple.com/search?term=animalcollective',
+  'https://itunes.apple.com/search?term=gorillaz',
+  'https://itunes.apple.com/search?term=futureislands',
+  'https://itunes.apple.com/search?term=tvontheradio',
+  'https://itunes.apple.com/search?term=rac'
+]
+
+var sadBands = [
+  'https://itunes.apple.com/search?term=damienjurado', 'https://itunes.apple.com/search?term=sigurros', 'https://itunes.apple.com/search?term=avettbrothers', 'https://itunes.apple.com/search?term=brighteyes', 'https://itunes.apple.com/search?term=norahjones', 'https://itunes.apple.com/search?term=louisarmstrong', 'https://itunes.apple.com/search?term=ettajames', 'https://itunes.apple.com/search?term=anathallo', 'https://itunes.apple.com/search?term=beirut', 'https://itunes.apple.com/search?term=danieljohnston'
+]
+
+var angryBands = [
+  'https://itunes.apple.com/search?term=thechariot',
+  'https://itunes.apple.com/search?term=underoath',
+  'https://itunes.apple.com/search?term=motorhead',
+  'https://itunes.apple.com/search?term=paramore',
+  'https://itunes.apple.com/search?term=foofighters',
+  'https://itunes.apple.com/search?term=beastieboys',
+  'https://itunes.apple.com/search?term=rageagainstthemachine',
+  'https://itunes.apple.com/search?term=kendricklamar',
+  'https://itunes.apple.com/search?term=sisyphus',
+  'https://itunes.apple.com/search?term=pedrothelion'
+]
+
+var sexyBands = [
+  'https://itunes.apple.com/search?term=smoothjazz',
+  'https://itunes.apple.com/search?term=groverwashington',
+  'https://itunes.apple.com/search?term=johncoltrane',
+  'https://itunes.apple.com/search?term=johnlegend',
+  'https://itunes.apple.com/search?term=sufjanstevens',
+  'https://itunes.apple.com/search?term=sisyphus-takeme',
+  'https://itunes.apple.com/search?term=beachhouse',
+  'https://itunes.apple.com/search?term=allisfulloflove',
+  'https://itunes.apple.com/search?term=littledragon',
+  'https://itunes.apple.com/search?term=sleepingatlast'
+]
+
+var goofyBands = [
+  'https://itunes.apple.com/search?term=wolfparade',
+  'https://itunes.apple.com/search?term=clapyourhandssayyeah',
+  'https://itunes.apple.com/search?term=modestmouse',
+  'https://itunes.apple.com/search?term=talkingheads',
+  'https://itunes.apple.com/search?term=yacht',
+  'https://itunes.apple.com/search?term=tokyopoliceclub',
+  'https://itunes.apple.com/search?term=jamaicanqueens',
+  'https://itunes.apple.com/search?term=devo',
+  'https://itunes.apple.com/search?term=sbtrkt',
+  'https://itunes.apple.com/search?term=djshadow'
+]
 
 weatherForm.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -43,26 +98,31 @@ weatherForm.addEventListener('submit', function(event) {
             emoImg.setAttribute('src', 'emotions/happy.png')
             moodImage.append(emoImg);
             var emoChoice = 'happy';
+            getBands(happyBands);
           } else if (sad.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/sad.png')
             moodImage.append(emoImg);
             var emoChoice = 'sad';
+            getBands(sadBands);
           } else if (angry.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/angry.png')
             moodImage.append(emoImg);
             var emoChoice = 'angry';
+            getBands(angryBands);
           } else if (sexy.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/sexy.png')
             moodImage.append(emoImg);
             var emoChoice = 'sexy';
+            getBands(sexyBands);
           } else if (goofy.checked) {
             var emoImg = document.createElement('img');
             emoImg.setAttribute('src', 'emotions/goofy.png')
             moodImage.append(emoImg);
             var emoChoice = 'goofy';
+            getBands(goofyBands)
           } else {
             var nothing = document.createElement('h5');
             nothing.innerHTML = 'Pick an Emotion';
@@ -70,49 +130,44 @@ weatherForm.addEventListener('submit', function(event) {
             var emoChoice = 'nothing';
           }
 
-          var happyPromises = [];
-          var happyBands = [
-            'https://itunes.apple.com/search?term=lcdsoundsystem','https://itunes.apple.com/search?term=arcadefire', 'https://itunes.apple.com/search?term=foals','https://itunes.apple.com/search?term=menomena', 'https://itunes.apple.com/search?term=altj',
-            'https://itunes.apple.com/search?term=animalcollective',
-            'https://itunes.apple.com/search?term=gorillaz',
-            'https://itunes.apple.com/search?term=futureislands',
-            'https://itunes.apple.com/search?term=tvontheradio',
-            'https://itunes.apple.com/search?term=rac'
-          ]
 
-          for (i = 0; i < happyBands.length; i++) {
-            fetch(happyBands[i])
-              .then((response) => {
-                return response.json()
-                }).then((data) => {
-                  happyPromises.push(data);
-                  var playlist = document.getElementsByClassName('playlist')[0];
-                  for (var i = 0; i < happyPromises.length; i++) {
-                    // SONG IMAGE
-                    var songImgURL = happyPromises[i].results["0"].artworkUrl30;
-                    var songImg = document.createElement('img');
-                    songImg.setAttribute('src', songImgURL);
-                    // ARTIST NAME and SONG NAME
-                    var artistSongTitle = document.createElement('p')
-                    var artistName = happyPromises[i].results["0"].artistName;
-                    var songName = happyPromises[i].results["0"].trackName;
-                    artistSongTitle.innerHTML = artistName + ' - ' + songName;
-                    // SONG PLAYER
-                    var songPreURL = happyPromises[i].results["0"].previewUrl;
-                    var songPlayer = document.createElement('video');
-                    songPlayer.setAttribute('controls', 'controls');
-                    songPlayer.setAttribute('name', 'media');
-                    // SET SOURCE INSIDE VIDEO TAG
-                    var source = document.createElement('source');
-                    source.setAttribute('src', songPreURL);
-                    source.setAttribute('type', 'audio/x-m4a');
-                    songPlayer.append(source);
-                    // PAGE BREAK AFTER EACH PLAYLIST ITEM
-                    var pageBreak = document.createElement('br');
-                  }
-                  playlist.append(songImg, artistSongTitle, songPlayer, pageBreak);
-            })
-          }
+
+          function getBands(emotionBandArray) {
+            for (i = 0; i < emotionBandArray.length; i++) {
+              fetch(emotionBandArray[i])
+                .then((response) => {
+                  return response.json()
+                  }).then((data) => {
+                    promises.push(data);
+                    var playlist = document.getElementsByClassName('playlist')[0];
+                    for (var i = 0; i < promises.length; i++) {
+                      // SONG IMAGE
+                      var songImgURL = promises[i].results["0"].artworkUrl30;
+                      var songImg = document.createElement('img');
+                      songImg.setAttribute('src', songImgURL);
+                      // ARTIST NAME and SONG NAME
+                      var artistSongTitle = document.createElement('p')
+                      var artistName = promises[i].results["0"].artistName;
+                      var songName = promises[i].results["0"].trackName;
+                      artistSongTitle.innerHTML = artistName + ' - ' + songName;
+                      // SONG PLAYER
+                      var songPreURL = promises[i].results["0"].previewUrl;
+                      var songPlayer = document.createElement('video');
+                      songPlayer.setAttribute('controls', 'controls');
+                      songPlayer.setAttribute('name', 'media');
+                      // SET SOURCE INSIDE VIDEO TAG
+                      var source = document.createElement('source');
+                      source.setAttribute('src', songPreURL);
+                      source.setAttribute('type', 'audio/x-m4a');
+                      songPlayer.append(source);
+                      // PAGE BREAK AFTER EACH PLAYLIST ITEM
+                      var pageBreak = document.createElement('br');
+                    }
+                    playlist.append(songImg, artistSongTitle, songPlayer, pageBreak);
+              })
+            }
+        }
+
 
           // CREATE EMPTY ARRAY FOR FETCHING PROMISES (PUSH)
           // ARRAY OF BAND NAMES
