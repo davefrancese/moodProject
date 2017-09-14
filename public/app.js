@@ -70,16 +70,7 @@ weatherForm.addEventListener('submit', function(event) {
             var emoChoice = 'nothing';
           }
 
-          // CREATE EMPTY ARRAY FOR FETCHING PROMISES (PUSH)
-          // ARRAY OF BAND NAMES
-          // LOOP THROU ARRAY
-            //  GEN. URL (ENDPOINT)
-            //  FETCH URL
-            //  PUSH RESULT=(promise) OF FETCH TO EMPTY ARRAY
-          // PROMISE.ALL ON EMPTY ARRAY
-
           var happyPromises = [];
-
           var happyBands = [
             'https://itunes.apple.com/search?term=lcdsoundsystem','https://itunes.apple.com/search?term=arcadefire', 'https://itunes.apple.com/search?term=foals','https://itunes.apple.com/search?term=menomena', 'https://itunes.apple.com/search?term=altj',
             'https://itunes.apple.com/search?term=animalcollective',
@@ -116,13 +107,20 @@ weatherForm.addEventListener('submit', function(event) {
                     source.setAttribute('src', songPreURL);
                     source.setAttribute('type', 'audio/x-m4a');
                     songPlayer.append(source);
+                    // PAGE BREAK AFTER EACH PLAYLIST ITEM
+                    var pageBreak = document.createElement('br');
                   }
-                  playlist.append(songImg, artistSongTitle, songPlayer);
+                  playlist.append(songImg, artistSongTitle, songPlayer, pageBreak);
             })
           }
 
-
-
+          // CREATE EMPTY ARRAY FOR FETCHING PROMISES (PUSH)
+          // ARRAY OF BAND NAMES
+          // LOOP THROU ARRAY
+            //  GEN. URL (ENDPOINT)
+            //  FETCH URL
+            //  PUSH RESULT=(promise) OF FETCH TO EMPTY ARRAY
+          // PROMISE.ALL ON EMPTY ARRAY
 
           //Promise.all(happyPromises).then((values) => {
 
@@ -133,18 +131,7 @@ weatherForm.addEventListener('submit', function(event) {
             //   // var songImgURL = values["0"].results[i].artworkUrl30;
             //
             // }
-
-
-
-
           //})
-
-
-
-
-
-
-
         })
     })
 })
