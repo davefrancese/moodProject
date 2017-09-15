@@ -138,8 +138,6 @@ weatherForm.addEventListener('submit', function(event) {
             var emoChoice = 'nothing';
           }
 
-
-
           function getBands(emotionBandArray) {
             for (i = 0; i < emotionBandArray.length; i++) {
               fetch(emotionBandArray[i])
@@ -176,8 +174,6 @@ weatherForm.addEventListener('submit', function(event) {
               })
             }
         }
-
-
           // CREATE EMPTY ARRAY FOR FETCHING PROMISES (PUSH)
           // ARRAY OF BAND NAMES
           // LOOP THROU ARRAY
