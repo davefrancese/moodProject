@@ -14,7 +14,7 @@ MOOD. is an app that generates a playlist of 10 songs based on the weather where
 ![alt text](public/images/playlistPage.png "Playlist Page")
 
 ## Walkthrough
-
+[Click here watch MOOD. in action!](https://youtu.be/hJrmwzzpLfk)
 
 ## API's Used
 1. WeatherUnderground
