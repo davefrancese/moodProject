@@ -46,8 +46,6 @@ button {
 
 /*----- PLAYLIST RESULTS -----*/
 #result-container {
-  border-top-color: #968E7C;
-  border-top-style: double;
   margin-top: 50px;
   background: #474647;
 }
@@ -77,6 +75,4 @@ video {
 /*----- FOOTER -----*/
 footer {
   padding-top: 30px;
-  border-top-color: #968E7C;
-  border-top-style: double;
 }
