@@ -66,7 +66,7 @@ weatherForm.addEventListener('submit', function(event) {
   var citySearchValue = document.getElementById('cityInput').value;
   var stateSearchValue = document.getElementById('stateInput').value.toUpperCase();
 
-  var weatherEndpoint = 'https://galvanize-cors-proxy.herokuapp.com/http://api.wunderground.com/api/8f425deadec4abd7/conditions/q/';
+  var weatherEndpoint = 'https://galvanize-cors.herokuapp.com/http://api.wunderground.com/api/8f425deadec4abd7/conditions/q/';
   var weatherAPI = weatherEndpoint + stateSearchValue + "/" + citySearchValue + ".json";
   fetch(weatherAPI)
     .then((response) => {
